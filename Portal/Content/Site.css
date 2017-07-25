@@ -1,0 +1,106 @@
+﻿body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.voffset {
+    margin-top: 2px;
+}
+.voffset1 {
+    margin-top: 5px;
+}
+.voffset2 {
+    margin-top: 10px;
+}
+
+/*Boot strap overrides */
+.navbar-inverse {
+    background-color: #CBEDEE;
+    border-color: #CBEDEE;
+}
+
+.navbar-collapse {
+    background-color: #CBEDEE;
+    color: #F67357;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #F67357;
+}
+body{ 
+    font-size:15px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.form-control {
+    font-size: 14px;
+    border-radius: 9px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+.btn {
+    font-size: 17px;
+    padding: 10px;
+}
+
+.btn-sm, .btn-xs {
+    line-height: 0.01;
+}
+.table > td .actions {
+    font-size: 13px;
+    display: none;
+}
+.table > td:hover .actions {
+    display: block;
+}
+/* Page level styles */
