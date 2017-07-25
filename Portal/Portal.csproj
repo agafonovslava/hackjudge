@@ -201,6 +201,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Api\JudgeController.cs" />
     <Compile Include="Controllers\JudgesController.cs" />
+    <Compile Include="Controllers\OpinionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,7 @@
     <Compile Include="Migrations\JudgeDbInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\OpinionViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Judge.cs" />
     <Compile Include="Models\Opinion.cs" />
@@ -263,6 +265,11 @@
     <Content Include="Views\Judges\Create.cshtml" />
     <Content Include="Views\Judges\View.cshtml" />
     <Content Include="Views\Judges\Edit.cshtml" />
+    <Content Include="Views\Opinions\Create.cshtml" />
+    <Content Include="Views\Opinions\Delete.cshtml" />
+    <Content Include="Views\Opinions\Details.cshtml" />
+    <Content Include="Views\Opinions\Edit.cshtml" />
+    <Content Include="Views\Opinions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,49 @@
+﻿@model Portal.Models.OpinionViewModel
+
+@{
+    ViewBag.Title = "Opinion List";
+}
+<h2>Judge Opinions</h2>
+<p>
+    @Html.ActionLink("Create New Opinion", "Create")
+</p>
+
+@using (Html.BeginForm("Search", "Opinions"))
+{
+    <div class="form-group">
+        <div class="input-group" style="width:300px">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", autofocus = "autofocus" })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+    </div>
+}
+
+<table class="table table-condensed">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Title</th>
+        <th>JudgeId</th>
+        <th>Url</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var opnion in Model.Opinions)
+    {
+        <tr>
+            <td>@Html.ActionLink(@opnion.Title, "Details" + "/" + @opnion.OpinionId, "Opinions")</td>
+            <td>@opnion.JudgeId</td>
+            <td><a href="@opnion.Url" target="_blank">@opnion.Url</a></td>
+            <td class="actions">
+                <form action="@Url.Action("Delete", "Opinions", new {id = opnion.OpinionId })" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-link">Delete</button>
+                    <a href="@Url.Action("Edit", "Opinions", new {id = opnion.OpinionId})">Edit</a>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
