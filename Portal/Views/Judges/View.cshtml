@@ -9,154 +9,83 @@
         <img src="@Html.DisplayFor(model =>model.ImageUrl)" style="height:250px;width:250px;" />
     </div>
     <div class="col-sm-9">
-
+        <p>
+            <b>Name:</b> @Model.Name
+        </p>
+        <p>
+            <b>Description:</b> @Model.Description
+        </p>
         <ul class="nav nav-tabs">
             <li><a data-toggle="tab" href="#menu1">Judge Profile</a></li>
-            <li><a data-toggle="tab" href="#menu2">Opinion</a></li>
-            <li><a data-toggle="tab" href="#menu3">Analysis</a></li>
+            <li><a data-toggle="tab" href="#menu2">Ruling</a></li>
+            <li><a data-toggle="tab" href="#menu3">Additional Information</a></li>
         </ul>
 
         <div class="tab-content">
             <div id="menu1" class="tab-pane fade">
-                <h3>Judge Profile</h3>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="form-horizontal">
-
-                        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-                        @Html.HiddenFor(model => model.JudgeId)
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Description, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Description, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Description, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.LastUpdated, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.LastUpdated, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.LastUpdated, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.ImageUrl, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.ImageUrl, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.CaseHolding, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.CaseHolding, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.CaseHolding, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.AttorneyNames, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.AttorneyNames, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.AttorneyNames, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.CommonlyCitedSources, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.CommonlyCitedSources, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.CommonlyCitedSources, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.JudicalSystem, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.JudicalSystem, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.JudicalSystem, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Jurisdiction, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Jurisdiction, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Jurisdiction, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.NumberOfCases, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.NumberOfCases, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.NumberOfCases, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Education, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Education, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Education, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Memberships, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Memberships, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Memberships, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-
-                    </div>
-                }
-            </div>
-            <div id="menu2" class="tab-pane fade">
-                <h2>Opinions:</h2>
                 <div>
-                    @foreach (var o in Model.Opinions)
-                    {
-                        <div class="col-md-4">
-                            <div>@Html.ActionLink(o.Title, "Details" + "/" + @o.OpinionId, "Opinions")</div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div>@o.Url</div>
-                        </div>
-                    }
+                    <p>
+                        <b>Born:</b> @Model.Born
+                    </p>
+                    <p>
+                        <b>Country:</b> @Model.Country
+                    </p>
+                    <p>
+                        <b>Jurisdiction:</b> @Model.Jurisdiction
+                    </p>
+                    <p>
+                        <b>Language:</b> @Model.Language
+                    </p>
+                    <p>
+                        <b>Judical System:</b> @Model.JudicalSystem
+                    </p>
+                    <p>
+                        <b>Education:</b> @Model.Education
+                    </p>
+                    <p>
+                        <b>Attorneys before the Court:</b> @Model.AttorneyNames
+                    </p>
+                    <p>
+                        <b>Commonly Cited Sources:</b> @Model.CommonlyCitedSources
+                    </p>
+                    <p>
+                        <b>Studied In West:</b> @Model.StudiedInWest
+                    </p>
+                    <p>
+                        <b>Arrested For Corruption:</b> @Model.ArrestedForCorruption
+                    </p>
+                    <p>
+                        <b>Was Citation Used:</b> @Model.WasCitationUsed
+                    </p>
                 </div>
             </div>
+            <div id="menu2" class="tab-pane fade">
+                <h2>Rulings:</h2>
+                <p>
+                    @foreach (var o in Model.Rulings)
+                    {
+                        <p>
+                            <div> Details: @Html.ActionLink(o.Title, "Details" + "/" + @o.RulingId, "Rulings") Link: <a href="@o.Url" target="_blank">@o.Title</a></div>
+                        </p>
+                    }
+                </p>
+            </div>
             <div id="menu3" class="tab-pane fade">
+                <h2>Memberships:</h2>
                 @foreach (var m in Model.Memberships)
                 {
-                    <div class="col-md-4">
-                        <div>@Html.ActionLink(m.Title, "Details" + "/" + @m.MembershipId, "Memberships")</div>
-                    </div>
+                    <p>
+                        @Html.ActionLink(m.Title, "Details" + "/" + @m.MembershipId, "Memberships")
+                    </p>
                 }
                 <h3>Keywords:</h3>
             </div>
         </div>
-        
-
         <div>
             @Html.ActionLink("Back to Search Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
 </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -1,14 +1,14 @@
-﻿@model Portal.Models.OpinionViewModel
+﻿@model Portal.Models.RulingViewModel
 
 @{
-    ViewBag.Title = "Opinion List";
+    ViewBag.Title = "Ruling List";
 }
-<h2>Judge Opinions</h2>
+<h2>Judge Rulings</h2>
 <p>
-    @Html.ActionLink("Create New Opinion", "Create")
+    @Html.ActionLink("Create New Ruling", "Create")
 </p>
 
-@using (Html.BeginForm("Search", "Opinions"))
+@using (Html.BeginForm("Search", "Rulings"))
 {
     <div class="form-group">
         <div class="input-group" style="width:300px">
@@ -30,17 +30,17 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var opnion in Model.Opinions)
+    @foreach (var opnion in Model.Rulings)
     {
         <tr>
-            <td>@Html.ActionLink(@opnion.Title, "Details" + "/" + @opnion.OpinionId, "Opinions")</td>
+            <td>@Html.ActionLink(@opnion.Title, "Details" + "/" + @opnion.RulingId, "Rulings")</td>
             <td>@opnion.JudgeId</td>
             <td><a href="@opnion.Url" target="_blank">@opnion.Url</a></td>
             <td class="actions">
-                <form action="@Url.Action("Delete", "Opinions", new {id = opnion.OpinionId })" method="post">
+                <form action="@Url.Action("Delete", "Rulings", new {id = opnion.RulingId })" method="post">
                     @Html.AntiForgeryToken()
                     <button type="submit" class="btn-link">Delete</button>
-                    <a href="@Url.Action("Edit", "Opinions", new {id = opnion.OpinionId})">Edit</a>
+                    <a href="@Url.Action("Edit", "Rulings", new {id = opnion.RulingId})">Edit</a>
                 </form>
             </td>
         </tr>

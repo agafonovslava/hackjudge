@@ -7,11 +7,11 @@ using Portal.Models;
 
 namespace Portal.Controllers
 {
-    public class OpinionsController : Controller
+    public class RulingsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public OpinionsController()
+        public RulingsController()
         {
             _context = new ApplicationDbContext();
         }
@@ -20,124 +20,124 @@ namespace Portal.Controllers
         {
             if (string.IsNullOrWhiteSpace(query))
             {
-                var opinions = _context.Opinions.Include(o => o.Judge);
-                var viewModel = new OpinionViewModel
+                var Rulings = _context.Rulings.Include(o => o.Judge);
+                var viewModel = new RulingViewModel
                 {
                     ShowActions = User.Identity.IsAuthenticated,
-                    Opinions = opinions.ToList()
+                    Rulings = Rulings.ToList()
                 };
                 return View(viewModel);
             }
             else
             {
-                var containsList = _context.Opinions.Where(s => s.Title.Contains(query));
-                List<Opinion> opinions = containsList.ToList();
+                var containsList = _context.Rulings.Where(s => s.Title.Contains(query));
+                List<Ruling> Rulings = containsList.ToList();
 
-                var viewModel = new OpinionViewModel
+                var viewModel = new RulingViewModel
                 {
                     ShowActions = User.Identity.IsAuthenticated,
-                    Opinions = opinions
+                    Rulings = Rulings
                 };
 
                 return View(viewModel);
             }
         }
 
-        // GET: Opinions/Details/5
+        // GET: Rulings/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Opinion opinion = _context.Opinions.Find(id);
-            if (opinion == null)
+            Ruling Ruling = _context.Rulings.Find(id);
+            if (Ruling == null)
             {
                 return HttpNotFound();
             }
-            return View(opinion);
+            return View(Ruling);
         }
 
-        // GET: Opinions/Create
+        // GET: Rulings/Create
         public ActionResult Create()
         {
             ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId");
             return View();
         }
 
-        // POST: Opinions/Create
+        // POST: Rulings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OpinionId,Title,Url,JudgeId")] Opinion opinion)
+        public ActionResult Create([Bind(Include = "RulingId,Title,Url,JudgeId")] Ruling Ruling)
         {
             if (ModelState.IsValid)
             {
-                _context.Opinions.Add(opinion);
+                _context.Rulings.Add(Ruling);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", opinion.JudgeId);
-            return View(opinion);
+            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", Ruling.JudgeId);
+            return View(Ruling);
         }
 
-        // GET: Opinions/Edit/5
+        // GET: Rulings/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Opinion opinion = _context.Opinions.Find(id);
-            if (opinion == null)
+            Ruling Ruling = _context.Rulings.Find(id);
+            if (Ruling == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", opinion.JudgeId);
-            return View(opinion);
+            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", Ruling.JudgeId);
+            return View(Ruling);
         }
 
-        // POST: Opinions/Edit/5
+        // POST: Rulings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OpinionId,Title,Url,JudgeId,JudgeName")] Opinion opinion)
+        public ActionResult Edit([Bind(Include = "RulingId,Title,Url,JudgeId,JudgeName")] Ruling Ruling)
         {
             if (ModelState.IsValid)
             {
-                _context.Entry(opinion).State = EntityState.Modified;
+                _context.Entry(Ruling).State = EntityState.Modified;
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", opinion.JudgeId);
-            return View(opinion);
+            ViewBag.JudgeId = new SelectList(_context.Judges, "JudgeId", "JudgeId", Ruling.JudgeId);
+            return View(Ruling);
         }
 
-        // GET: Opinions/Delete/5
+        // GET: Rulings/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Opinion opinion = _context.Opinions.Find(id);
-            if (opinion == null)
+            Ruling Ruling = _context.Rulings.Find(id);
+            if (Ruling == null)
             {
                 return HttpNotFound();
             }
-            return View(opinion);
+            return View(Ruling);
         }
 
-        // POST: Opinions/Delete/5
+        // POST: Rulings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Opinion opinion = _context.Opinions.Find(id);
-            _context.Opinions.Remove(opinion);
+            Ruling Ruling = _context.Rulings.Find(id);
+            _context.Rulings.Remove(Ruling);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -153,9 +153,9 @@ namespace Portal.Controllers
 
 
         [HttpPost]
-        public ActionResult Search(OpinionViewModel viewModel)
+        public ActionResult Search(RulingViewModel viewModel)
         {
-            return RedirectToAction("Index", "Opinions", new { query = viewModel.SearchTerm });
+            return RedirectToAction("Index", "Rulings", new { query = viewModel.SearchTerm });
         }
     }
 }

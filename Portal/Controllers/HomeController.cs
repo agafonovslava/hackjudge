@@ -33,7 +33,12 @@ namespace Portal.Controllers
             }
             else
             {
-                var containsList = _context.Judges.Where(s => s.Name.Contains(query));
+                var containsList = _context.Judges.Where(
+                    s => s.Name.Contains(query) || 
+                    s.Description.Contains(query) ||
+                    s.AttorneyNames.Contains(query) ||
+                    s.CommonlyCitedSources.Contains(query) ||
+                    s.Country.Contains(query));
                 List<Judge> judges = containsList.ToList();
 
                 var viewModel = new HomeViewModel

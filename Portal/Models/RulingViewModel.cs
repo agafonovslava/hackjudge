@@ -2,9 +2,9 @@
 
 namespace Portal.Models
 {
-    public class OpinionViewModel
+    public class RulingViewModel
     {
-        public List<Opinion> Opinions { get; set; }
+        public List<Ruling> Rulings { get; set; }
 
         public bool ShowActions { get; set; }
 

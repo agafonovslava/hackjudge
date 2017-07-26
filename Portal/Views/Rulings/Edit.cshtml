@@ -1,7 +1,7 @@
-﻿@model Portal.Models.Opinion
+﻿@model Portal.Models.Ruling
 
 @{
-    ViewBag.Title = "Edit Opinion";
+    ViewBag.Title = "Edit Ruling";
 }
 
 <h2>@Html.DisplayFor(model => model.Title)</h2>
@@ -11,10 +11,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Opinion</h4>
+        <h4>Ruling</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.OpinionId)
+        @Html.HiddenFor(model => model.RulingId)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })

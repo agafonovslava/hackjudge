@@ -1,7 +1,7 @@
 ﻿@model Portal.Models.HomeViewModel
 
 @{
-    ViewBag.Title = "Judge Portal";
+    ViewBag.Title = "Judge Search Portal";
 }
 
 
@@ -32,10 +32,10 @@
                             @judje.Description
                         </p>
                         <p>
-                            @judje.Education
+                            <b>Education:</b> @judje.Education
                         </p>
                         <p>
-                            @judje.Country
+                            <b>Country:</b> @judje.Country
                         </p>
                         <form action="@Url.Action("Delete", "Judges", new {id = judje.JudgeId})" method="post">
                             @Html.AntiForgeryToken()
@@ -48,33 +48,3 @@
         </ul>
     </div>
 </div>
-
-@*<table class="table table-condensed">
-    <thead class="thead-inverse">
-        <tr>
-            <th>Name</th>
-            <th>Jurisdiction</th>
-            <th>Education</th>
-            <th>Number Of Cases</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var judje in Model.Judges)
-        {
-            <tr>
-                <td>@Html.ActionLink(@judje.Name, "View" + "/" + @judje.JudgeId, "Judges")</td>
-                <td>@judje.Jurisdiction</td>
-                <td>@judje.Education</td>
-                <td>@judje.NumberOfCases</td>
-                <td class="actions">
-                    <form action="@Url.Action("Delete", "Judges", new {id = judje.JudgeId})" method="post">
-                        @Html.AntiForgeryToken()
-                        <button type="submit" class="btn-link">Delete</button>
-                        <a href="@Url.Action("Edit", "Judges", new {id = judje.JudgeId})">Edit</a>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@

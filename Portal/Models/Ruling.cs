@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Portal.Models
 {
-    public class Opinion
+    public class Ruling
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Display(Name = "Opinion")]
+        [Display(Name = "Ruling")]
         [Key]
-        public int OpinionId { get; set; }
+        public int RulingId { get; set; }
 
         public string Title { get; set; }
 

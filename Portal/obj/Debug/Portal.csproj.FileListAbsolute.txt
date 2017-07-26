@@ -98,8 +98,6 @@ C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\bin\Microsoft.AI.Server
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\bin\Microsoft.AI.Web.xml
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.csprojResolveAssemblyReference.cache
-C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.Migrations.Init.resources
-C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.csproj.GenerateResource.Cache
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.dll
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.pdb
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\bin\SautinSoft.PdfFocus.dll

@@ -18,6 +18,12 @@
         [Required]
         public string Name { get; set; }
 
+        public string StudiedInWest { get; set; }
+
+        public string WasCitationUsed { get; set; }
+
+        public string ArrestedForCorruption { get; set; }
+
         public string Country { get; set; }
 
         public DateTime LastUpdated { get; set; }
@@ -27,8 +33,6 @@
         public string Born { get; set; }
 
         public string Description { get; set; }
-
-        public string CaseHolding { get; set; }
 
         public string AttorneyNames { get; set; }
 
@@ -44,7 +48,7 @@
 
         public string Language { get; set; }
 
-        public virtual ICollection<Opinion> Opinions { get; set; }
+        public virtual ICollection<Ruling> Rulings { get; set; }
 
         public virtual ICollection<Membership> Memberships { get; set; }
     }

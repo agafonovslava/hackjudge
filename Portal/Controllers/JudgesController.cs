@@ -33,8 +33,9 @@ namespace Portal.Controllers
             {
                 JudgeId = j.JudgeId,
                 AttorneyNames = j.AttorneyNames,
-                CaseHolding = j.CaseHolding,
                 CommonlyCitedSources = j.CommonlyCitedSources,
+                Country = j.Country,
+                Born = j.Born,
                 Education = j.Education,
                 ImageUrl = j.ImageUrl,
                 JudicalSystem = j.JudicalSystem,
@@ -44,8 +45,12 @@ namespace Portal.Controllers
                 SatoriId = j.SatoriId,
                 Name = j.Name,
                 Description = j.Description,
-                Opinions = j.Opinions,
-                NumberOfCases = j.NumberOfCases
+                Rulings = j.Rulings,
+                NumberOfCases = j.NumberOfCases,
+                WasCitationUsed = j.WasCitationUsed,
+                Language = j.Language,
+                StudiedInWest = j.StudiedInWest,
+                ArrestedForCorruption = j.ArrestedForCorruption
             };
 
             return View("View", viewModel);
@@ -73,21 +78,26 @@ namespace Portal.Controllers
             var j = _context.Judges.Single(s => s.JudgeId == id);
             var viewModel = new Judge
             {
-               JudgeId = j.JudgeId,
-               AttorneyNames = j.AttorneyNames,
-               CaseHolding = j.CaseHolding,
-               CommonlyCitedSources = j.CommonlyCitedSources,
-               Education = j.Education,
-               ImageUrl = j.ImageUrl,
-               JudicalSystem = j.JudicalSystem,
-               Jurisdiction = j.Jurisdiction,
-               LastUpdated = j.LastUpdated,
-               Memberships = j.Memberships,
-               SatoriId = j.SatoriId,
-               Name = j.Name,
-               Description = j.Description,
-               Opinions = j.Opinions,
-               NumberOfCases = j.NumberOfCases
+                JudgeId = j.JudgeId,
+                AttorneyNames = j.AttorneyNames,
+                CommonlyCitedSources = j.CommonlyCitedSources,
+                Education = j.Education,
+                ImageUrl = j.ImageUrl,
+                JudicalSystem = j.JudicalSystem,
+                Jurisdiction = j.Jurisdiction,
+                LastUpdated = j.LastUpdated,
+                Memberships = j.Memberships,
+                SatoriId = j.SatoriId,
+                Name = j.Name,
+                Description = j.Description,
+                Rulings = j.Rulings,
+                NumberOfCases = j.NumberOfCases,
+                WasCitationUsed = j.WasCitationUsed,
+                Language = j.Language,
+                StudiedInWest = j.StudiedInWest,
+                ArrestedForCorruption = j.ArrestedForCorruption,
+                Country = j.Country,
+                Born = j.Born,
             };
 
             return View("Edit", viewModel);
@@ -106,20 +116,33 @@ namespace Portal.Controllers
             var j = _context.Judges.Single(s => s.JudgeId == viewModel.JudgeId);
             j.LastUpdated = DateTime.UtcNow;
             j.AttorneyNames = viewModel.AttorneyNames;
-            j.CaseHolding = viewModel.CaseHolding;
             j.CommonlyCitedSources = viewModel.CommonlyCitedSources;
             j.Education = viewModel.Education;
             j.ImageUrl = viewModel.ImageUrl;
             j.JudicalSystem = viewModel.JudicalSystem;
             j.Jurisdiction = viewModel.Jurisdiction;
-            j.LastUpdated = viewModel.LastUpdated;
             j.Memberships = viewModel.Memberships;
             j.SatoriId = viewModel.SatoriId;
             j.Name = viewModel.Name;
             j.Description = viewModel.Description;
-            j.Opinions = viewModel.Opinions;
+            j.Rulings = viewModel.Rulings;
             j.NumberOfCases = viewModel.NumberOfCases;
-            
+            j.WasCitationUsed = viewModel.WasCitationUsed;
+            j.Language = viewModel.Language;
+            j.StudiedInWest = viewModel.StudiedInWest;
+            j.ArrestedForCorruption = viewModel.ArrestedForCorruption;
+            j.SatoriId = viewModel.SatoriId;
+            j.Country = viewModel.Country;
+            j.Born = viewModel.Born;
+            j.Memberships = viewModel.Memberships;
+            j.Rulings = viewModel.Rulings;
+            j.Born = viewModel.Born;
+            j.Country = viewModel.Country;
+            j.CommonlyCitedSources = viewModel.CommonlyCitedSources;
+            j.StudiedInWest = viewModel.StudiedInWest;
+            j.WasCitationUsed = viewModel.WasCitationUsed;
+            j.ArrestedForCorruption = viewModel.ArrestedForCorruption;
+            j.Language = viewModel.Language;
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
@@ -144,7 +167,7 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult Search(HomeViewModel viewModel)
         {
-            return RedirectToAction("Index", "Home", new { query = viewModel.SearchTerm});
+            return RedirectToAction("Index", "Home", new { query = viewModel.SearchTerm });
         }
 
         public static string ParsePdf(string pathToPdf, string pathToText)
@@ -164,7 +187,7 @@ namespace Portal.Controllers
                 if (result == 0)
                 {
                     //TODO
-                     
+
                 }
             }
 

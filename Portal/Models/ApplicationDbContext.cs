@@ -12,7 +12,7 @@ namespace Portal.Models
     {
         public DbSet<Judge> Judges { get; set; }
 
-        public DbSet<Opinion> Opinions { get; set; }
+        public DbSet<Ruling> Rulings { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection")

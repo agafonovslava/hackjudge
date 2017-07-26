@@ -7,6 +7,6 @@ namespace Portal.ViewModels
     {
         public IEnumerable<Judge> Judges { get; set; }
 
-        public IEnumerable<Opinion> Opinions { get; set; }
+        public IEnumerable<Ruling> Rulings { get; set; }
     }
 }
