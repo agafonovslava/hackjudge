@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using SautinSoft;
 
 namespace Portal.Controllers
 {
@@ -33,7 +34,7 @@ namespace Portal.Controllers
                 JudgeId = j.JudgeId,
                 AttorneyNames = j.AttorneyNames,
                 CaseHolding = j.CaseHolding,
-                CommonlySitedSources = j.CommonlySitedSources,
+                CommonlyCitedSources = j.CommonlyCitedSources,
                 Education = j.Education,
                 ImageUrl = j.ImageUrl,
                 JudicalSystem = j.JudicalSystem,
@@ -44,7 +45,6 @@ namespace Portal.Controllers
                 Name = j.Name,
                 Description = j.Description,
                 Opinions = j.Opinions,
-                Religion = j.Religion,
                 NumberOfCases = j.NumberOfCases
             };
 
@@ -76,7 +76,7 @@ namespace Portal.Controllers
                JudgeId = j.JudgeId,
                AttorneyNames = j.AttorneyNames,
                CaseHolding = j.CaseHolding,
-               CommonlySitedSources = j.CommonlySitedSources,
+               CommonlyCitedSources = j.CommonlyCitedSources,
                Education = j.Education,
                ImageUrl = j.ImageUrl,
                JudicalSystem = j.JudicalSystem,
@@ -87,7 +87,6 @@ namespace Portal.Controllers
                Name = j.Name,
                Description = j.Description,
                Opinions = j.Opinions,
-               Religion = j.Religion,
                NumberOfCases = j.NumberOfCases
             };
 
@@ -108,7 +107,7 @@ namespace Portal.Controllers
             j.LastUpdated = DateTime.UtcNow;
             j.AttorneyNames = viewModel.AttorneyNames;
             j.CaseHolding = viewModel.CaseHolding;
-            j.CommonlySitedSources = viewModel.CommonlySitedSources;
+            j.CommonlyCitedSources = viewModel.CommonlyCitedSources;
             j.Education = viewModel.Education;
             j.ImageUrl = viewModel.ImageUrl;
             j.JudicalSystem = viewModel.JudicalSystem;
@@ -119,7 +118,6 @@ namespace Portal.Controllers
             j.Name = viewModel.Name;
             j.Description = viewModel.Description;
             j.Opinions = viewModel.Opinions;
-            j.Religion = viewModel.Religion;
             j.NumberOfCases = viewModel.NumberOfCases;
             
             _context.SaveChanges();
@@ -147,6 +145,30 @@ namespace Portal.Controllers
         public ActionResult Search(HomeViewModel viewModel)
         {
             return RedirectToAction("Index", "Home", new { query = viewModel.SearchTerm});
+        }
+
+        public static string ParsePdf(string pathToPdf, string pathToText)
+        {
+            //Convert PDF file to Text file
+            PdfFocus f = new PdfFocus();
+            // You may download the latest version of SDK here:  
+            // www.sautinsoft.com/products/pdf-focus/download.php  
+
+            f.OpenPdf(pathToPdf);
+
+            if (f.PageCount > 0)
+            {
+                int result = f.ToText(pathToText);
+
+                //Show Text document
+                if (result == 0)
+                {
+                    //TODO
+                     
+                }
+            }
+
+            return string.Empty;
         }
     }
 }

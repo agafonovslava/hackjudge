@@ -71,10 +71,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CommonlySitedSources, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CommonlyCitedSources, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CommonlySitedSources, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CommonlySitedSources, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.CommonlyCitedSources, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CommonlyCitedSources, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -107,14 +107,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Religion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Religion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Religion, "", new { @class = "text-danger" })
             </div>
         </div>
 

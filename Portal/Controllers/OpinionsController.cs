@@ -70,7 +70,7 @@ namespace Portal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OpinionId,Title,Url,JudgeId,JudgeName")] Opinion opinion)
+        public ActionResult Create([Bind(Include = "OpinionId,Title,Url,JudgeId")] Opinion opinion)
         {
             if (ModelState.IsValid)
             {

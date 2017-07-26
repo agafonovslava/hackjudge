@@ -14,6 +14,11 @@ namespace Portal.Controllers
             _context = new ApplicationDbContext();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public ActionResult Index(string query = null)
         {
             if (string.IsNullOrWhiteSpace(query))

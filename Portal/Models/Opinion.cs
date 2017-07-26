@@ -14,6 +14,8 @@ namespace Portal.Models
 
         public string Url { get; set; }
 
+        public int NumberOfCitations { get; set; }
+
         public int JudgeId { get; set; }
 
         public virtual Judge Judge { get; set; }

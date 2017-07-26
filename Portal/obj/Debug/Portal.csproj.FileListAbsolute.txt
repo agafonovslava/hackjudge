@@ -102,3 +102,4 @@ C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.Migrat
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.csproj.GenerateResource.Cache
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.dll
 C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\obj\Debug\Portal.pdb
+C:\Users\slavag\Dropbox\Projects\Hack\JudgePortal\Portal\bin\SautinSoft.PdfFocus.dll

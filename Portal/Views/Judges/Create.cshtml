@@ -35,9 +35,9 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.CommonlySitedSources)
-        @Html.TextBoxFor(m => m.CommonlySitedSources, new { @class = "form-control", autofocus = "autofocus" })
-        @Html.ValidationMessageFor(m => m.CommonlySitedSources)
+        @Html.LabelFor(m => m.CommonlyCitedSources)
+        @Html.TextBoxFor(m => m.CommonlyCitedSources, new { @class = "form-control", autofocus = "autofocus" })
+        @Html.ValidationMessageFor(m => m.CommonlyCitedSources)
     </div>
     
     <div class="form-group">
@@ -62,12 +62,6 @@
         @Html.LabelFor(m => m.ImageUrl)
         @Html.TextBoxFor(m => m.ImageUrl, new { @class = "form-control", autofocus = "autofocus" })
         @Html.ValidationMessageFor(m=> m.ImageUrl)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Religion)
-        @Html.TextBoxFor(m => m.Religion, new { @class = "form-control", autofocus = "autofocus" })
-        @Html.ValidationMessageFor(m=> m.Religion)
     </div>
 
     <div class="form-group">

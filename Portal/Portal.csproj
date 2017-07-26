@@ -53,6 +53,9 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SautinSoft.PdfFocus">
+      <HintPath>..\packages\SautinSoft.PdfFocus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -201,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Api\JudgeController.cs" />
     <Compile Include="Controllers\JudgesController.cs" />
+    <Compile Include="Controllers\MembershipsController.cs" />
     <Compile Include="Controllers\OpinionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,6 +216,7 @@
     <Compile Include="Migrations\JudgeDbInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Membership.cs" />
     <Compile Include="Models\OpinionViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\Judge.cs" />
@@ -235,6 +240,88 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Files\1- FINAL ORDERS BY CJ.pdf" />
+    <Content Include="Content\Files\2 - Ibrahim Js Opinion.pdf" />
+    <Content Include="Content\Files\23 Criminal Application 34 of 2014 DPP v Ahmed Mohammed Omar.pdf" />
+    <Content Include="Content\Files\24 Application 1 of 2016 Joseph Kinyua v Pauline Wandia Kinyua.pdf" />
+    <Content Include="Content\Files\24 Application 10 of 2016 Parliamentary Service Commission v Martin Wambora.pdf" />
+    <Content Include="Content\Files\24 Application No 19 of 2016 Mutanga Tea and Coffee-min.pdf" />
+    <Content Include="Content\Files\24 Application No 7A of 2016 Okongo Oyugi v Obado and others.pdf" />
+    <Content Include="Content\Files\3 - Ruling on P.O. 11 and 12 of 2016.pdf" />
+    <Content Include="Content\Files\4- ruling on P.O. No.12 of 2016.pdf" />
+    <Content Include="Content\Files\6 - Wanjala PO Ruling - 14 June 2016.pdf" />
+    <Content Include="Content\Files\APPLICATION NO 4 OF 2012-amended ruling.pdf" />
+    <Content Include="Content\Files\Application No. 1 of 2013.. with concurring ruling of the DCJ.pdf" />
+    <Content Include="Content\Files\Application No. 15 of 2014, mwashetani..pdf" />
+    <Content Include="Content\Files\APPLN NO. 1 OF 2011 sum model industries-RUling.pdf" />
+    <Content Include="Content\Files\BASIL Ruling.pdf" />
+    <Content Include="Content\Files\CCK COMPLIANCE - FINAL - 12-2-2015.pdf" />
+    <Content Include="Content\Files\civil application No. 1 of 2012 %28ruling%29.pdf" />
+    <Content Include="Content\Files\Civil Application No. 23 of 2015 KRA v Habimana and Others.pdf" />
+    <Content Include="Content\Files\Civil Application No. 3 of 2016 Kisumu executive.pdf" />
+    <Content Include="Content\Files\Corrected judgment-Petition 5 of 2013.pdf" />
+    <Content Include="Content\Files\digital migration ruling final.pdf" />
+    <Content Include="Content\Files\Dissenting Opinion-One Third Rule.pdf" />
+    <Content Include="Content\Files\FLORENCE MACHANI- APPLICATION NO. 2 OF 2015.pdf" />
+    <Content Include="Content\Files\GAUKO Matter.pdf" />
+    <Content Include="Content\Files\Gladys Wanjiru Munyi v Diana Wanjiru Munyi.pdf" />
+    <Content Include="Content\Files\icj v ag-CA 1 0f 2012.pdf" />
+    <Content Include="Content\Files\Jasbir Petition 4 of 2012 Final Ruling.pdf" />
+    <Content Include="Content\Files\JMVB2 Judgment with dissent.pdf" />
+    <Content Include="Content\Files\JMVB2 JUDGMENT.pdf" />
+    <Content Include="Content\Files\Judgement - IEBC and New Vision.pdf" />
+    <Content Include="Content\Files\Judgement - Town Council of Awendo.pdf" />
+    <Content Include="Content\Files\Judgement Shahbal Petition No. 21 of 2014.pdf" />
+    <Content Include="Content\Files\Judgment - Anami Silverse Lisamula v IEBC &amp; 7 Others.pdf" />
+    <Content Include="Content\Files\Judgment - Fredrick Otieno Outa v Jared Odoyo Okello &amp; Others.pdf" />
+    <Content Include="Content\Files\Judgment - Gatirau Peter Munya v Dickson Mwenda Kithinji &amp; Others.pdf" />
+    <Content Include="Content\Files\Judgment - George Michael Wanjohi vs Stephen Kariuki.pdf" />
+    <Content Include="Content\Files\Judgment - Hassan Ali Joho &amp; Another v Suleiman Said Shahbal &amp; 2 Others.pdf" />
+    <Content Include="Content\Files\Judgment - Nathif Jama Adan v Abdikhaim Osman Mohamed &amp; Others.pdf" />
+    <Content Include="Content\Files\Judgment - Zachary Okoth Obado v Edward Akoth Oyugi &amp; Others.pdf" />
+    <Content Include="Content\Files\Lawrence Nduttu &amp; 6000 others vs KBL Ruling.pdf" />
+    <Content Include="Content\Files\Ledama Olekina Judgment.pdf" />
+    <Content Include="Content\Files\Majority Decision-One Third Rule.pdf" />
+    <Content Include="Content\Files\Menginya v KRA.pdf" />
+    <Content Include="Content\Files\MOTION NO. 4 OF 2013.pdf" />
+    <Content Include="Content\Files\Mumo Matemu-Amicus Application.pdf" />
+    <Content Include="Content\Files\National Bank Ltd v Anaj Warehousing 1-12-2015.pdf" />
+    <Content Include="Content\Files\Ngoge v 3 others stay application Rules 5 2 b.pdf" />
+    <Content Include="Content\Files\Njihia - Ruling.pdf" />
+    <Content Include="Content\Files\NLC Advisory Opinion 2-12-2015.pdf" />
+    <Content Include="Content\Files\ORDER APPL. NO.16 OF 2015 OF 2ND SEPTEMBER 2015.pdf" />
+    <Content Include="Content\Files\Order Correcting George Wanjohi Judgment.pdf" />
+    <Content Include="Content\Files\OUTA - Ruling.pdf" />
+    <Content Include="Content\Files\PETER MUNYA RULING.pdf" />
+    <Content Include="Content\Files\Petition 14.2016 Oparanya.pdf" />
+    <Content Include="Content\Files\Petition 17.2014 Bichage.pdf" />
+    <Content Include="Content\Files\Petition 5 of 2012 Ruling.pdf" />
+    <Content Include="Content\Files\PETITION NO 6 OF 2012-Ruling 5th July, 2012.pdf" />
+    <Content Include="Content\Files\Petition No. 1 of 2013 Final Ruling.pdf" />
+    <Content Include="Content\Files\PETITION NO. 10 OF 2013 JUDGMENT - Hassan Joho [Final].pdf" />
+    <Content Include="Content\Files\Petition No. 10 of 2014....with concurring judg of Njoki SCJ.pdf" />
+    <Content Include="Content\Files\Petition No. 12 of 2014- WETANGULA.pdf" />
+    <Content Include="Content\Files\PETITION NO. 16 OF 2015 - RULING.pdf" />
+    <Content Include="Content\Files\Petition No. 18 of 2014.pdf" />
+    <Content Include="Content\Files\Petition No. 2 of 2013 Ruling.pdf" />
+    <Content Include="Content\Files\Petition No. 23 of 2014..Nick Salat....ed.pdf" />
+    <Content Include="Content\Files\Petition No. 28 of 2014 Delivered April 16 2015.pdf" />
+    <Content Include="Content\Files\PETITION NO. 5 OF 2013...DCJ.pdf" />
+    <Content Include="Content\Files\Petition Nos 6 and 7 of 2013-corrected ruling.pdf" />
+    <Content Include="Content\Files\PO by Omtatah Ruling - 14.06.2016.pdf" />
+    <Content Include="Content\Files\Republic Vs Karisa Chengo and 2 others.pdf" />
+    <Content Include="Content\Files\Ruling - Aviation Case.pdf" />
+    <Content Include="Content\Files\Ruling - Lemanken Aramat v Harun Meitamei Lempanka &amp; 2 Others [14.05.2014].pdf" />
+    <Content Include="Content\Files\Ruling Application Extension of Time to Appeal - Hassan Nyanje v Khatib Mwashetani &amp; 3 Others.pdf" />
+    <Content Include="Content\Files\Ruling Certification &amp; Leave to File Appeal to SC - Bwana Mohamed Bwana v Silvano Buko Bonga &amp; 2 Others.pdf" />
+    <Content Include="Content\Files\Ruling in Charles Karathe Matter App. 1 of 2014 2.pdf" />
+    <Content Include="Content\Files\RULING ON ADVISIORY OPINION NO.2 OF 2014.pdf" />
+    <Content Include="Content\Files\RULING ON APPLICATION NO. 10 OF 2016.pdf" />
+    <Content Include="Content\Files\Supreme Court Ruling - TSC and Teachers Unions.pdf" />
+    <Content Include="Content\Files\Telkom-1 - Ruling.pdf" />
+    <Content Include="Content\Files\Twaha vs Timamy Judgment.pdf" />
+    <Content Include="Content\Files\Wavinya - Ruling - Supreme Court.pdf" />
+    <None Include="Properties\PublishProfiles\hackjudge - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hackjudge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\HackJudge.pubxml" />
     <None Include="Properties\PublishProfiles\KnowledgeBaseWeb - Web Deploy.pubxml" />
@@ -270,6 +357,12 @@
     <Content Include="Views\Opinions\Details.cshtml" />
     <Content Include="Views\Opinions\Edit.cshtml" />
     <Content Include="Views\Opinions\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Memberships\Create.cshtml" />
+    <Content Include="Views\Memberships\Delete.cshtml" />
+    <Content Include="Views\Memberships\Details.cshtml" />
+    <Content Include="Views\Memberships\Edit.cshtml" />
+    <Content Include="Views\Memberships\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -28,5 +28,7 @@ namespace Portal.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public System.Data.Entity.DbSet<Portal.Models.Membership> Memberships { get; set; }
     }
 }
